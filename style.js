@@ -65,11 +65,11 @@
       if (closed.includes(d.getDay())) continue;
       const label = i === 0 ? "Сегодня" : i === 1 ? "Завтра" : wd[d.getDay()] + ", " + d.getDate() + " " + mon[d.getMonth()];
       const full = (i < 2 ? label.toLowerCase() + ", " : "") + wd[d.getDay()] + " " + d.getDate() + " " + mon[d.getMonth()];
-      daysBox.insertAdjacentHTML("beforeend", `<label class="s-chip"><input type="radio" name="day" value="${made}" data-full="${full}"${made === 0 ? " checked" : ""}><span>${label}</span></label>`);
+      daysBox.insertAdjacentHTML("beforeend", `<label class="s-chip"><input type="radio" name="day" value="${made}" data-full="${full}"${made === 0 ? " checked" : ""}${i === 0 ? ' data-today="1"' : ""}><span>${label}</span></label>`);
       made++;
     }
     const drawTimes = () => {
-      const first = daysBox.querySelector("input:checked")?.value === "0";
+      const first = daysBox.querySelector("input:checked")?.dataset.today === "1";
       const nowH = today.getHours() + today.getMinutes() / 60;
       timesBox.innerHTML = "";
       let firstFree = true;

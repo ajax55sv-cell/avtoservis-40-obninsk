@@ -226,14 +226,12 @@ html, body { overflow-x: clip; }
 .s-hero__photo figcaption { color: #343a42; }
 .s-hero__photo img { border-color: rgb(20 23 27 / .16); }
 @media (max-width: 880px) {
+  .s-photos { grid-template-columns: 1fr; }
   .s-hero__bg { height: 100%; }
   .s-hero__bg img { object-position: 62% 40% !important; opacity: .5; }
   .s-hero__bg::after { background:
     linear-gradient(180deg, color-mix(in srgb, var(--hero-light) 90%, transparent) 0%, color-mix(in srgb, var(--hero-light) 70%, transparent) 55%, color-mix(in srgb, var(--hero-light) 40%, transparent) 85%, var(--c-canvas) 100%); }
 }
-
-/* n03v2 */
-@media (max-width: 880px) { .s-photos { grid-template-columns: 1fr; } .s-photos figure:first-child img { aspect-ratio: 16 / 10; } }
 
 /* n03v3 */
 /* фото бокса видно по-настоящему: без светлой пелены, текст на матовой светлой карточке, виджет слегка прозрачный */
